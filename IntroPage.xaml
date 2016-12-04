@@ -1,0 +1,82 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" 
+    x:Class="Pentago.IntroPage"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="728"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+    	<controls:Pivot>
+    		<controls:PivotItem Header="Rule">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="This is a 2-player board game. It is simple if you know tic-tac-toe or 5-in-a-row (gomoku). The board is divided into four 3×3 sub-boards. Taking turns, the player place a piece, then rotate one sub-board by 90 degree clockwise or anti-clockwise." Foreground="Wheat" FontSize="20" AllowDrop="False" TextWrapping="Wrap" Grid.RowSpan="1" Grid.ColumnSpan="3" />
+                    <Image Source="Resource/tut1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="250" Grid.Row="1" />
+                    <Image Source="Resource/tut2.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="250" Grid.Row="1" Grid.Column="1" />
+                    <Image Source="Resource/tut3.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="250" Grid.Row="1" Grid.Column="2" />
+                    <TextBlock Margin="0,0,0,8" Text="Place" Foreground="Wheat" FontSize="22" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock Margin="0,0,0,8" Text="Rotate" Foreground="Wheat" FontSize="22" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1"/>
+                    <Image Source="Resource/forward arrow.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" Width="50" />
+                    <Image Source="Resource/forward arrow.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" Width="50" Grid.Column="1"/>
+                </Grid>
+            </controls:PivotItem>
+    		<controls:PivotItem Header="Goal">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Your goal is to make a five-in-a-row in horizontal, vertical or diagnal direction.&#10;Please note: checking win is only after the rotation." Foreground="Wheat" FontSize="20" AllowDrop="False" TextWrapping="Wrap" Grid.RowSpan="1" Grid.ColumnSpan="3" />
+                    <Image Source="Resource/win1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="250" Grid.Row="1" />
+                    <Image Source="Resource/win2.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="250" Grid.Row="1" Grid.Column="1" />
+                    <Image Source="Resource/win3.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="250" Grid.Row="1" Grid.Column="2" />
+
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem Header="About">
+                <Grid>
+                    <TextBlock Text="Pentago&#10;Version: 1.0&#10;Author: Yuxiang&#10;Email: yxt287@cs.bham.ac.uk" Foreground="Wheat" FontSize="40" AllowDrop="False" TextWrapping="Wrap" Grid.RowSpan="1" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+                    
+                </Grid>
+            </controls:PivotItem>
+    	</controls:Pivot>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

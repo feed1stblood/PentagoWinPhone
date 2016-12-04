@@ -1,0 +1,163 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:GalaSoft_MvvmLight_Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71" 
+    x:Class="Pentago.StartPage"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="728"
+    shell:SystemTray.IsVisible="True" BackKeyPress="PhoneApplicationPage_BackKeyPress">
+	<phone:PhoneApplicationPage.Resources>
+		
+		<Style x:Key="ButtonPlay1" TargetType="Button">
+			<Setter Property="Background" Value="#FF1F3B53"/>
+			<Setter Property="Foreground" Value="#FF000000"/>
+			<Setter Property="Padding" Value="3"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush">
+				<Setter.Value>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#FFA3AEB9" Offset="0"/>
+						<GradientStop Color="#FF8399A9" Offset="0.375"/>
+						<GradientStop Color="#FF718597" Offset="0.375"/>
+						<GradientStop Color="#FF617584" Offset="1"/>
+					</LinearGradientBrush>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Pressed"/>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates">
+									<VisualState x:Name="Focused"/>
+									<VisualState x:Name="Unfocused"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Image Source="Resource/play.png" Stretch="Fill"/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ButtonInfo1" TargetType="Button">
+			<Setter Property="Background" Value="#FF1F3B53"/>
+			<Setter Property="Foreground" Value="#FF000000"/>
+			<Setter Property="Padding" Value="3"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush">
+				<Setter.Value>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#FFA3AEB9" Offset="0"/>
+						<GradientStop Color="#FF8399A9" Offset="0.375"/>
+						<GradientStop Color="#FF718597" Offset="0.375"/>
+						<GradientStop Color="#FF617584" Offset="1"/>
+					</LinearGradientBrush>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Pressed"/>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates">
+									<VisualState x:Name="Focused"/>
+									<VisualState x:Name="Unfocused"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Image Source="Resource/info.png"/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ButtonStyleExample" TargetType="Button">
+			<Setter Property="Background" Value="#FF1F3B53"/>
+			<Setter Property="Foreground" Value="#FF000000"/>
+			<Setter Property="Padding" Value="3"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush">
+				<Setter.Value>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#FFA3AEB9" Offset="0"/>
+						<GradientStop Color="#FF8399A9" Offset="0.375"/>
+						<GradientStop Color="#FF718597" Offset="0.375"/>
+						<GradientStop Color="#FF617584" Offset="1"/>
+					</LinearGradientBrush>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Pressed"/>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates">
+									<VisualState x:Name="Focused"/>
+									<VisualState x:Name="Unfocused"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Image Source="Resource/example.png" Stretch="Fill"/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		
+	</phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    	<Grid Grid.Row="1">
+    		<Grid.Background>
+    			<ImageBrush Stretch="Fill" ImageSource="Resource/background.jpg"/>
+    		</Grid.Background>
+    		<Image Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="Resource/board.png" Width="400" Height="400"/>
+    		<Button Content="" HorizontalAlignment="Left" Height="100" Margin="100,0,0,100" VerticalAlignment="Bottom" Width="100" Style="{StaticResource ButtonPlay1}" Tap="Button_Click" ManipulationStarted="Button_Click" />
+    		<Button Content="Button" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="100" Margin="0,0,100,100" Style="{StaticResource ButtonInfo1}" x:Name="BtnInfo" Click="BtnInfo_Click" />
+    		<TextBlock Foreground="Black" TextWrapping="Wrap" Text="Pentago" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="64" FontStretch="Expanded" FontWeight="SemiBold"/>
+    		<Button Content="" Height="100" Margin="0,0,0,13" VerticalAlignment="Bottom" Style="{StaticResource ButtonStyleExample}" Tap="BtnExample_Tap" HorizontalAlignment="Center" Width="100" />
+    	</Grid>
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

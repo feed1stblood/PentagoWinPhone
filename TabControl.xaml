@@ -1,0 +1,46 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Pentago">
+
+    <Style TargetType="local:TabSwitch">
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TabSwitch">
+                    <Grid>
+                        <Rectangle x:Name="rectangle" Width="65" Height="40" RadiusY="5" RadiusX="5"
+                                Fill="Red" HorizontalAlignment="Left">
+                            <Rectangle.RenderTransform>
+                                <CompositeTransform/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <ItemsPresenter/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TabSwitchItem">
+        <Setter Property="Width" Value="65"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="0,10,0,3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TabSwitchItem">
+                    <TextBlock Text="{TemplateBinding Content}" TextAlignment="Center" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
