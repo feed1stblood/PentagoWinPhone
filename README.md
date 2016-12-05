@@ -1,6 +1,6 @@
 # PentagoWinPhone
 AI on Pentago game, for windows phone  
-Online demo (Web edition)  
+(Online demo - Web edition)[http://103.27.79.85:6687/static/pentago/TestPage.html]  
 
 # Development kit  
 Visual studio 10 with silverlight 4  
